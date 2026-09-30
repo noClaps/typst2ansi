@@ -1,0 +1,61 @@
+:root {
+    color-scheme: light dark;
+    font-family: ui-sans-serif, sans-serif;
+
+    --bg: light-dark(#fff, #1e1e1e);
+    --text: light-dark(#000, #fff);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    width: 88dvw;
+    max-width: 64rem;
+    margin: auto;
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    textarea {
+        font-family: ui-monospace, monospace;
+        font-size: 0.75rem;
+        border: 1px solid alpha(from var(--text) / 25%);
+        border-radius: 0.25rem;
+        resize: none;
+        width: 100%;
+    }
+
+    .output {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 0.5rem;
+
+        output {
+            font-family: ui-monospace, monospace;
+            font-size: 0.75rem;
+            border: 1px solid alpha(from var(--text) / 25%);
+            border-radius: 0.25rem;
+            overflow: auto;
+            white-space-collapse: preserve;
+        }
+
+        .controls {
+            justify-self: end;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+}

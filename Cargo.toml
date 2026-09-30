@@ -1,0 +1,12 @@
+[package]
+name = "typst2ansi"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+tree-sitter-highlight = "0.27.0"
+tree-sitter-typst = { version = "0.10.0", path = "vendor/tree-sitter-typst" }
+wasm-bindgen = "0.2.129"

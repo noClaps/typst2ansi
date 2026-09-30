@@ -1,0 +1,19 @@
+on: [push, workflow_dispatch]
+
+jobs:
+  deploy:
+    runs-on: codeberg-small-lazy
+    steps:
+      - uses: https://code.forgejo.org/actions/checkout@v7
+      - uses: https://github.com/dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - run: |
+          sudo apt install -y llvm
+          cargo install --locked wasm-bindgen-cli
+      - run: make build-linux
+      - uses: https://github.com/cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy web --project-name=typst2ansi

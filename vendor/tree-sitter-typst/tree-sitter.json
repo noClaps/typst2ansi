@@ -1,0 +1,37 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "typst",
+      "camelcase": "Typst",
+      "title": "Typst",
+      "scope": "source.typst",
+      "file-types": [
+        "typ",
+        "typst"
+      ],
+      "highlights": "queries/typst/highlights.scm",
+      "injections": "queries/typst/injections.scm",
+      "injection-regex": "^typst$",
+      "class-name": "TreeSitterTypst"
+    }
+  ],
+  "metadata": {
+    "version": "0.10.0",
+    "license": "MIT",
+    "description": "Typst grammar for tree-sitter",
+    "links": {
+      "repository": "https://github.com/uben0/tree-sitter-typst"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "java": false,
+    "node": false,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

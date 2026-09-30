@@ -28,4 +28,4 @@ The `web/` directory will then have all of the required files for the site to wo
 
 ## AI Disclosure
 
-AI was used to help with debugging some issues I was having with the Tree-sitter queries, and to write the build scripts in the Makefile. Aside from that and the vendored grammar, all of the code was written by me.
+AI was used to help with debugging some issues I was having with the Tree-sitter queries and the CI workflow, and to write the build scripts in the Makefile. Aside from that and the vendored grammar, all of the code was written by me.

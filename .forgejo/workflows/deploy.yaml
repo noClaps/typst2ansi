@@ -8,9 +8,8 @@ jobs:
       - uses: https://github.com/dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
-      - run: |
-          bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-          cargo install --locked wasm-bindgen-cli
+      - uses: https://github.com/taiki-e/install-action@wasm-bindgen
+      - run: bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
       - run: make build-linux
       - uses: https://github.com/cloudflare/wrangler-action@v4
         with:

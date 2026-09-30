@@ -11,7 +11,7 @@ jobs:
       - uses: https://github.com/taiki-e/install-action@wasm-bindgen
       - run: |
           bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-          sudo apt-get install -y clang
+          sudo apt-get install -y clang llvm
       - run: make build-linux
       - uses: https://github.com/cloudflare/wrangler-action@v4
         with:

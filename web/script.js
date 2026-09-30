@@ -1,5 +1,5 @@
 // @ts-check
-import init, { highlight } from "./typst_hl/typst_hl.js";
+import init, { highlight } from "./typst2ansi/typst2ansi.js";
 
 const input = document.querySelector("textarea");
 if (!input) throw "input element not found";

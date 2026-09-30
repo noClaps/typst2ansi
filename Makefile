@@ -5,7 +5,7 @@ build-mac:
 	ARFLAGS_wasm32_unknown_unknown="--format=gnu" \
 	CC_ENABLE_DEBUG_OUTPUT=1 \
 	cargo build --target wasm32-unknown-unknown --release
-	@wasm-bindgen target/wasm32-unknown-unknown/release/typst_hl.wasm --out-dir web/typst_hl --target web --no-typescript
+	@wasm-bindgen target/wasm32-unknown-unknown/release/typst2ansi.wasm --out-dir web/typst2ansi --target web --no-typescript
 
 build-linux:
 	@AR_wasm32_unknown_unknown=llvm-ar \
@@ -13,4 +13,4 @@ build-linux:
 	ARFLAGS_wasm32_unknown_unknown="--format=gnu" \
 	CC_ENABLE_DEBUG_OUTPUT=1 \
 	cargo build --target wasm32-unknown-unknown --release
-	@wasm-bindgen target/wasm32-unknown-unknown/release/typst_hl.wasm --out-dir web/typst_hl --target web --no-typescript
+	@wasm-bindgen target/wasm32-unknown-unknown/release/typst2ansi.wasm --out-dir web/typst2ansi --target web --no-typescript

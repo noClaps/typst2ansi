@@ -9,7 +9,7 @@ jobs:
         with:
           targets: wasm32-unknown-unknown
       - run: |
-          sudo apt install -y llvm
+          bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
           cargo install --locked wasm-bindgen-cli
       - run: make build-linux
       - uses: https://github.com/cloudflare/wrangler-action@v4

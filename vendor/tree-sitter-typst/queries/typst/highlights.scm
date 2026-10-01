@@ -154,15 +154,22 @@
     item: (field)))
 (call
   item: (field
-    (ident) @ident.interp))
+    (ident) @variable
+    field: (ident) @variable))
 (call
   item: (field
     field: (ident) @function.method))
 (call
   item: (field
     (field
-      (ident) @ident.interp
-      field: (ident) @ident.interp)))
+      (ident) @variable
+      field: (ident) @variable)))
+(code
+  (call
+    item: (field
+      (field
+        (ident) @ident.interp
+        field: (ident) @ident.interp))))
 
 ; RAW
 

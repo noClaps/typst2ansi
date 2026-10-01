@@ -10,6 +10,9 @@ await init();
 input.addEventListener("input", () => {
   output.innerHTML = highlight(input.value).html;
 });
+input.addEventListener("scroll", () => {
+  output.scrollTop = input.scrollTop;
+});
 
 const copyButton = document.querySelector("button");
 if (!copyButton) throw "copy button not found";

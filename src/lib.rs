@@ -139,7 +139,7 @@ pub fn highlight(source: &str) -> Output {
         })
         .unwrap();
     Output {
-        ansi: ansi_output,
+        ansi: ansi_output.replace('`', "\x1b[37m`\x1b[0m"),
         html: html_renderer.lines().collect::<String>(),
     }
 }

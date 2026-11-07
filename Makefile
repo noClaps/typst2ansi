@@ -1,5 +1,6 @@
 build:
 	@LLVM="$$(brew --prefix llvm)"; \
+	CC_wasm32_unknown_unknown="$${LLVM}/bin/clang" \
 	AR_wasm32_unknown_unknown="$${LLVM}/bin/llvm-ar" \
 	RANLIB_wasm32_unknown_unknown="$${LLVM}/bin/llvm-ranlib" \
 	ARFLAGS_wasm32_unknown_unknown="--format=gnu" \

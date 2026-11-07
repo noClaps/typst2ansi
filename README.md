@@ -13,7 +13,7 @@ You'll need [Rust](https://rust-lang.org), [LLVM](https://llvm.org) and the [`wa
 Clone the repository.
 
 ```sh
-git clone https://codeberg.org/noClaps/typst2ansi.git
+git clone https://github.com/noClaps/typst2ansi.git
 cd typst2ansi
 ```
 

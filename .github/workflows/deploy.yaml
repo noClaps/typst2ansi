@@ -1,0 +1,20 @@
+on: [push, workflow_dispatch]
+
+jobs:
+  deploy:
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: brew update && brew install llvm wasm-bindgen
+      - run: make build
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: web/
+      - uses: actions/deploy-pages@v5
+        id: deployment

@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: brew update && brew install llvm wasm-bindgen
+      - run: rustup target add wasm32-unknown-unknown
       - run: make build
       - uses: actions/upload-pages-artifact@v5
         with:
